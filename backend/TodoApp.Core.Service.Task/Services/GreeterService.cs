@@ -1,7 +1,7 @@
 using Grpc.Core;
-using ExampleMicroServiceGRPC;
+using TodoApp.Core.Service.Task;
 
-namespace ExampleMicroServiceGRPC.Services;
+namespace TodoApp.Core.Service.Task.Services;
 
 public class GreeterService : Greeter.GreeterBase
 {

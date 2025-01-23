@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+option csharp_namespace = "TodoApp.Core.Protos.Task";
+
+package task;
+
+service TaskManager {
+  rpc Read (Empty) returns (TaskList);
+  rpc Find (TaskId) returns (RawTask);
+  rpc Create (CreateTask) returns (RawTask);
+  rpc Delete (TaskId) returns (RawTask);
+  rpc Update (UpdateTask) returns (RawTask);
+}
+
+message Empty {}
+
+message RawTask {
+  string uuid = 1;
+  string title = 2;
+  string description = 3;
+  bool complete = 4;
+}
+
+message TaskList {
+  repeated RawTask tasks = 1;
+}
+
+message CreateTask {
+  string uuid = 1;
+  string title = 2;
+  string description = 3;
+  bool complete = 4;
+}
+
+message TaskId {
+  string id = 1;
+}
+
+message UpdateTask {
+  string uuid = 1;
+  string title = 2;
+  string description = 3;
+  bool complete = 4;
+}
