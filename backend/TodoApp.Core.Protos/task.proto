@@ -15,10 +15,11 @@ service TaskManager {
 message Empty {}
 
 message RawTask {
-  string uuid = 1;
-  string title = 2;
-  string description = 3;
-  bool complete = 4;
+  int64 taskId = 1;
+  string uuid = 2;
+  string title = 3;
+  string description = 4;
+  bool complete = 5;
 }
 
 message TaskList {
@@ -33,7 +34,7 @@ message CreateTask {
 }
 
 message TaskId {
-  string id = 1;
+  string taskId = 1;
 }
 
 message UpdateTask {

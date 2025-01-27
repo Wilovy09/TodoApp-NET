@@ -1,8 +1,18 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
+    <Protobuf Include="../TodoApp.Core.Protos/task.proto" GrpcServices="Server" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\TodoApp.Core.Domain.Entities\TodoApp.Core.Domain.Entities.csproj" />
     <ProjectReference Include="..\TodoApp.Core.Infraestructure.Data\TodoApp.Core.Infraestructure.Data.csproj" />
+    <ProjectReference Include="..\TodoApp.Core.Protos\TodoApp.Core.Protos.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.1" />
+    <PackageReference Include="Grpc.AspNetCore" Version="2.57.0" />
   </ItemGroup>
 
   <PropertyGroup>

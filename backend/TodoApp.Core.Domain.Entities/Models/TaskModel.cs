@@ -4,6 +4,8 @@ namespace TodoApp.Core.Domain.Entities;
 
 public class TaskModel
 {
+    public int TaskId { get; set; }
+
     public string Uuid { get; set; } = null!;
 
     [MaxLength(50, ErrorMessage = "El campo {0} debe tener máximo {1} catactéres.")]
