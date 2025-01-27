@@ -1,5 +1,7 @@
 # Proyecto de práctica
 
+Hay cosas que mejorar pero este proyecto es un proyecto de estudio.
+
 ## SQL-Server
 
 > [!NOTE] 
