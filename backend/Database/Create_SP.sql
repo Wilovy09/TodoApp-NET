@@ -22,7 +22,7 @@ EXEC create_task '3ad52dd1-5e9a-45ba-910d-08cafffb5b5a', 'TestTask', 'Test Task 
 CREATE PROCEDURE find_task (@uuid UNIQUEIDENTIFIER)
 AS
 BEGIN
-    SELECT * FROM Tasks WHERE Uuid = @uuid;
+    SELECT TaskId, CAST(Uuid as NVARCHAR(50)) as Uuid, Nombre, Description, Complete FROM Tasks WHERE Uuid = @uuid;
 END
 GO
 

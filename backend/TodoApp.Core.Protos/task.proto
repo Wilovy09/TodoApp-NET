@@ -6,9 +6,9 @@ package task;
 
 service TaskManager {
   rpc Read (Empty) returns (TaskList);
-  rpc Find (TaskId) returns (RawTask);
+  rpc Find (TaskUuid) returns (RawTask);
   rpc Create (CreateTask) returns (RawTask);
-  rpc Delete (TaskId) returns (RawTask);
+  rpc Delete (TaskUuid) returns (RawTask);
   rpc Update (UpdateTask) returns (RawTask);
 }
 
@@ -27,14 +27,20 @@ message TaskList {
 }
 
 message CreateTask {
+  string title = 1;
+  string description = 2;
+  bool complete = 3;
+}
+
+message PartialTask {
   string uuid = 1;
   string title = 2;
   string description = 3;
   bool complete = 4;
 }
 
-message TaskId {
-  string taskId = 1;
+message TaskUuid {
+  string uuid = 1;
 }
 
 message UpdateTask {
